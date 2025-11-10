@@ -1,0 +1,150 @@
+{
+	"consumables": [
+		{
+			"id": "spirit_stone",
+			"name": "Spirit Stone",
+			"description": "Contains pure spiritual energy. Restores 50 Qi.",
+			"type": "consumable",
+			"effect": {"qi_restore": 50},
+			"value": 100,
+			"rarity": "common"
+		},
+		{
+			"id": "cultivation_pill",
+			"name": "Cultivation Pill",
+			"description": "Accelerates cultivation progress by 10%.",
+			"type": "consumable",
+			"effect": {"cultivation_progress": 0.1},
+			"value": 500,
+			"rarity": "uncommon"
+		},
+		{
+			"id": "healing_elixir",
+			"name": "Healing Elixir",
+			"description": "Restores 100 health instantly.",
+			"type": "consumable",
+			"effect": {"health_restore": 100},
+			"value": 200,
+			"rarity": "common"
+		},
+		{
+			"id": "breakthrough_pill",
+			"name": "Breakthrough Pill",
+			"description": "Greatly increases chance of successful realm breakthrough.",
+			"type": "consumable",
+			"effect": {"breakthrough_bonus": 0.5},
+			"value": 2000,
+			"rarity": "rare"
+		}
+	],
+	"artifacts": [
+		{
+			"id": "cursed_amulet",
+			"name": "Cursed Amulet",
+			"description": "Increases power but slowly corrupts the wearer.",
+			"type": "artifact",
+			"effect": {"strength": 10, "spirit": 10, "karma_drain": -1},
+			"value": 1000,
+			"rarity": "rare",
+			"equip_slot": "amulet"
+		},
+		{
+			"id": "jade_talisman",
+			"name": "Jade Talisman",
+			"description": "Protects against spiritual attacks.",
+			"type": "artifact",
+			"effect": {"spirit_defense": 20},
+			"value": 800,
+			"rarity": "uncommon",
+			"equip_slot": "talisman"
+		},
+		{
+			"id": "demon_slaying_blade",
+			"name": "Demon Slaying Blade",
+			"description": "A sword that deals massive damage to demonic entities.",
+			"type": "artifact",
+			"effect": {"strength": 25, "demon_damage": 2.0},
+			"value": 3000,
+			"rarity": "epic",
+			"equip_slot": "weapon"
+		},
+		{
+			"id": "immortals_remnant",
+			"name": "Immortal's Remnant",
+			"description": "Fragment of a True Immortal's power.",
+			"type": "artifact",
+			"effect": {"all_stats": 15, "cultivation_speed": 1.3},
+			"value": 5000,
+			"rarity": "legendary",
+			"equip_slot": "artifact"
+		}
+	],
+	"materials": [
+		{
+			"id": "talisman_paper",
+			"name": "Talisman Paper",
+			"description": "Used to craft talismans.",
+			"type": "material",
+			"value": 50,
+			"rarity": "common",
+			"stack_size": 99
+		},
+		{
+			"id": "demon_core",
+			"name": "Demon Core Fragment",
+			"description": "Core of a slain demon. Used in dark rituals.",
+			"type": "material",
+			"value": 500,
+			"rarity": "rare",
+			"stack_size": 10
+		},
+		{
+			"id": "celestial_silk",
+			"name": "Celestial Silk",
+			"description": "Fabric from the heavenly realm. Incredibly valuable.",
+			"type": "material",
+			"value": 2000,
+			"rarity": "epic",
+			"stack_size": 5
+		},
+		{
+			"id": "ancient_jade",
+			"name": "Ancient Jade Slip",
+			"description": "Contains forgotten knowledge.",
+			"type": "material",
+			"value": 1000,
+			"rarity": "uncommon",
+			"stack_size": 1,
+			"can_read": true
+		}
+	],
+	"quest_items": [
+		{
+			"id": "sealed_scroll",
+			"name": "Sealed Scroll",
+			"description": "A mysterious scroll sealed with powerful formations.",
+			"type": "quest",
+			"value": 0,
+			"rarity": "unique",
+			"quest_id": "cursed_research"
+		},
+		{
+			"id": "jade_key",
+			"name": "Jade Key",
+			"description": "One of three keys needed to activate the ancient formation.",
+			"type": "quest",
+			"value": 0,
+			"rarity": "unique",
+			"quest_id": "three_keys"
+		},
+		{
+			"id": "villain_simulator_core",
+			"name": "Villain Simulator Core",
+			"description": "The true form of the Villain Simulator. Sentient and dangerous.",
+			"type": "quest",
+			"value": 0,
+			"rarity": "unique",
+			"quest_id": "final_truth"
+		}
+	]
+}

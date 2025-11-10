@@ -1,0 +1,222 @@
+{
+	"random_events": [
+		{
+			"id": "ancient_cave",
+			"name": "Ancient Cave Discovery",
+			"description": "You discover a hidden cave emanating ancient qi",
+			"conditions": [],
+			"outcomes": [
+				{
+					"text": "You explore the cave carefully",
+					"karma": 0,
+					"rewards": {"spirit": 3, "item": "Ancient Jade Slip"}
+				},
+				{
+					"text": "You rush in greedily",
+					"karma": -5,
+					"rewards": {"item": "Cursed Artifact"},
+					"trigger": "trap_damage"
+				},
+				{
+					"text": "You ignore it and move on",
+					"karma": 0,
+					"rewards": {}
+				}
+			]
+		},
+		{
+			"id": "sect_disciple",
+			"name": "Sect Disciple Challenge",
+			"description": "A sect disciple blocks your path, demanding a duel",
+			"conditions": [],
+			"outcomes": [
+				{
+					"text": "Accept the challenge honorably",
+					"karma": 5,
+					"trigger": "combat",
+					"rewards": {"reputation": 10}
+				},
+				{
+					"text": "Attack with demonic arts",
+					"karma": -10,
+					"trigger": "combat",
+					"rewards": {"strength": 2}
+				},
+				{
+					"text": "Try to talk your way out",
+					"karma": 0,
+					"rewards": {}
+				}
+			]
+		},
+		{
+			"id": "dying_cultivator",
+			"name": "Dying Cultivator",
+			"description": "You find a dying cultivator who begs for help",
+			"conditions": [],
+			"outcomes": [
+				{
+					"text": "Help them with healing pills",
+					"karma": 15,
+					"rewards": {"reputation": 20, "ally": "Saved Cultivator"}
+				},
+				{
+					"text": "Steal their belongings",
+					"karma": -20,
+					"rewards": {"item": "Spirit Stone Cache"}
+				},
+				{
+					"text": "End their suffering mercifully",
+					"karma": -5,
+					"rewards": {"comprehension": 2}
+				}
+			]
+		},
+		{
+			"id": "heavenly_phenomenon",
+			"name": "Heavenly Phenomenon",
+			"description": "The sky cracks open, revealing celestial patterns",
+			"conditions": ["comprehension >= 20"],
+			"outcomes": [
+				{
+					"text": "Meditate and comprehend the patterns",
+					"karma": 5,
+					"rewards": {"comprehension": 5, "cultivation_progress": 0.1}
+				},
+				{
+					"text": "The moment passes",
+					"karma": 0,
+					"rewards": {}
+				}
+			]
+		},
+		{
+			"id": "demonic_altar",
+			"name": "Demonic Altar",
+			"description": "You stumble upon an altar radiating demonic energy",
+			"conditions": [],
+			"outcomes": [
+				{
+					"text": "Destroy the altar",
+					"karma": 10,
+					"rewards": {"reputation": 15},
+					"trigger": "sect_favor"
+				},
+				{
+					"text": "Make a blood sacrifice",
+					"karma": -25,
+					"rewards": {"strength": 5, "sutra": "Sutra of Blood Refinement"}
+				},
+				{
+					"text": "Leave it undisturbed",
+					"karma": 0,
+					"rewards": {}
+				}
+			]
+		},
+		{
+			"id": "wandering_master",
+			"name": "Wandering Master",
+			"description": "An old master observes you from afar",
+			"conditions": ["karma > 30"],
+			"outcomes": [
+				{
+					"text": "Respectfully request guidance",
+					"karma": 5,
+					"rewards": {"sutra": "Random Technique Sutra", "comprehension": 3}
+				},
+				{
+					"text": "The master disappears",
+					"karma": 0,
+					"rewards": {}
+				}
+			]
+		},
+		{
+			"id": "spatial_rift",
+			"name": "Spatial Rift",
+			"description": "Reality tears, revealing a glimpse of another realm",
+			"conditions": ["realm_level >= 3"],
+			"outcomes": [
+				{
+					"text": "Enter the rift boldly",
+					"karma": 0,
+					"rewards": {"insight": "Knowledge of Parallel Realms"},
+					"trigger": "teleport_random"
+				},
+				{
+					"text": "Study it from safety",
+					"karma": 0,
+					"rewards": {"comprehension": 4}
+				},
+				{
+					"text": "Seal it to prevent disasters",
+					"karma": 10,
+					"rewards": {"reputation": 10}
+				}
+			]
+		},
+		{
+			"id": "cursed_weapon",
+			"name": "Cursed Weapon",
+			"description": "A powerful but cursed weapon lies before you",
+			"conditions": [],
+			"outcomes": [
+				{
+					"text": "Claim the weapon",
+					"karma": -15,
+					"rewards": {"item": "Demon Slaying Blade", "strength": 10},
+					"trigger": "curse_applied"
+				},
+				{
+					"text": "Purify and claim it",
+					"karma": 5,
+					"rewards": {"item": "Purified Blade"},
+					"conditions": ["karma > 20"]
+				},
+				{
+					"text": "Leave it be",
+					"karma": 0,
+					"rewards": {}
+				}
+			]
+		}
+	],
+	"story_events": [
+		{
+			"id": "sect_raid",
+			"name": "Sect Revenge Raid",
+			"description": "The sect you wronged has sent disciples to hunt you down",
+			"trigger_conditions": ["karma < -30", "sect_influence < -50"],
+			"outcomes": "combat_sequence"
+		},
+		{
+			"id": "heavenly_tribulation",
+			"name": "Heavenly Tribulation",
+			"description": "The heavens judge your sins with lightning",
+			"trigger_conditions": ["karma < -50"],
+			"outcomes": "tribulation_challenge"
+		},
+		{
+			"id": "forbidden_archive",
+			"name": "Access to Forbidden Archive",
+			"description": "The Talisman Sect grants you access to their secret library",
+			"trigger_conditions": ["sect_influence:Talisman Sect > 70", "has_alliance:Talisman Sect"],
+			"outcomes": "unlock_location"
+		},
+		{
+			"id": "demon_invasion",
+			"name": "Demonic Realm Invasion",
+			"description": "Your negative karma has weakened the barrier, demons pour through",
+			"trigger_conditions": ["karma < -70"],
+			"outcomes": "world_change"
+		},
+		{
+			"id": "ascension_trial",
+			"name": "Trial of Ascension",
+			"description": "The heavens open a path for you to ascend",
+			"trigger_conditions": ["karma > 50", "realm_level >= 6"],
+			"outcomes": "ascension_path"
+		}
+	]
+}

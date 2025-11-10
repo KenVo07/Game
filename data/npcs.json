@@ -1,0 +1,109 @@
+{
+	"npcs": [
+		{
+			"id": "elder_chen",
+			"name": "Elder Chen",
+			"title": "Talisman Sect Elder",
+			"faction": "Talisman Sect",
+			"base_attitude": 20,
+			"location": "Daxia Capital - Talisman Quarter",
+			"description": "A wise elder who specializes in talisman arts",
+			"dialogue_tree_id": "elder_chen_dialogue",
+			"can_teach": true,
+			"teaches": ["Sutra of Talisman Arts"],
+			"requirements": {"reputation": 30, "sect_influence:Talisman Sect": 40}
+		},
+		{
+			"id": "blood_demon_lord",
+			"name": "Blood Demon Lord",
+			"title": "Blood Demon Sect Master",
+			"faction": "Blood Demon Sect",
+			"base_attitude": -30,
+			"location": "Forbidden Mountains",
+			"description": "A ruthless demon cultivator seeking supremacy",
+			"dialogue_tree_id": "demon_lord_dialogue",
+			"can_teach": true,
+			"teaches": ["Sutra of Veiled Hatred", "Heart Sutra of Demonic Ascension"],
+			"requirements": {"karma": -40, "realm_level": 4}
+		},
+		{
+			"id": "moon_sage",
+			"name": "Moon Sage",
+			"title": "Mysterious Hermit",
+			"faction": "Moon Pavilion",
+			"base_attitude": 0,
+			"location": "Moon Pavilion",
+			"description": "An enigmatic figure who sees all timelines",
+			"dialogue_tree_id": "moon_sage_dialogue",
+			"can_teach": true,
+			"teaches": ["Heart Sutra of Eternal Void"],
+			"requirements": {"simulations_done": 10}
+		},
+		{
+			"id": "imperial_general",
+			"name": "General Wei",
+			"title": "Imperial Guard Commander",
+			"faction": "Imperial Guard",
+			"base_attitude": 40,
+			"location": "Daxia Capital - Imperial Palace",
+			"description": "Loyal protector of the Daxia Empire",
+			"dialogue_tree_id": "general_dialogue",
+			"can_teach": true,
+			"teaches": ["Sutra of Heavenly Sword"],
+			"requirements": {"reputation": 50, "karma": 20}
+		},
+		{
+			"id": "hidden_master",
+			"name": "Dao Seeker",
+			"title": "Hidden Master",
+			"faction": "Hidden Masters",
+			"base_attitude": 0,
+			"location": "Random Encounter",
+			"description": "A wandering master who appears only to the destined",
+			"dialogue_tree_id": "hidden_master_dialogue",
+			"can_teach": true,
+			"teaches": ["Heart Sutra of Supreme Dao"],
+			"requirements": {"destiny_thread": 50, "realm_level": 5}
+		},
+		{
+			"id": "merchant_lin",
+			"name": "Merchant Lin",
+			"title": "Traveling Merchant",
+			"faction": "None",
+			"base_attitude": 50,
+			"location": "Daxia Capital - Market",
+			"description": "A friendly merchant with rare goods",
+			"dialogue_tree_id": "merchant_dialogue",
+			"can_trade": true,
+			"trades": {
+				"Spirit Stones": {"price": 100, "type": "currency"},
+				"Cultivation Pills": {"price": 500, "type": "consumable"},
+				"Talisman Paper": {"price": 200, "type": "material"}
+			}
+		},
+		{
+			"id": "young_disciple",
+			"name": "Liu Ming",
+			"title": "Sect Disciple",
+			"faction": "Talisman Sect",
+			"base_attitude": 30,
+			"location": "Daxia Capital",
+			"description": "An enthusiastic young cultivator",
+			"dialogue_tree_id": "disciple_dialogue",
+			"can_join": true,
+			"requirements": {"reputation": 40, "sect_influence:Talisman Sect": 50}
+		},
+		{
+			"id": "cursed_scholar",
+			"name": "Scholar Feng",
+			"title": "Cursed Researcher",
+			"faction": "None",
+			"base_attitude": -10,
+			"location": "Ancient Ruins",
+			"description": "A scholar driven mad by forbidden knowledge",
+			"dialogue_tree_id": "scholar_dialogue",
+			"quest_giver": true,
+			"quests": ["cursed_research", "seal_the_demon"]
+		}
+	]
+}

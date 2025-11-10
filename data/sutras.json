@@ -1,0 +1,84 @@
+{
+	"heart_sutras": [
+		{
+			"name": "Heart Sutra of Silent Chaos",
+			"description": "A balanced cultivation path that embraces both order and chaos",
+			"efficiency": 1.0,
+			"karma_requirement": null,
+			"special_effects": []
+		},
+		{
+			"name": "Heart Sutra of Demonic Ascension",
+			"description": "Accelerated cultivation through demonic methods",
+			"efficiency": 1.5,
+			"karma_requirement": -30,
+			"special_effects": ["demon_power", "fear_aura"]
+		},
+		{
+			"name": "Heart Sutra of Heavenly Virtue",
+			"description": "Righteous path blessed by the heavens",
+			"efficiency": 1.2,
+			"karma_requirement": 30,
+			"special_effects": ["divine_protection", "purification"]
+		},
+		{
+			"name": "Heart Sutra of Eternal Void",
+			"description": "Cultivation through understanding nothingness",
+			"efficiency": 0.8,
+			"karma_requirement": null,
+			"special_effects": ["void_affinity", "space_manipulation"]
+		},
+		{
+			"name": "Heart Sutra of Supreme Dao",
+			"description": "The ultimate path, incredibly efficient but difficult",
+			"efficiency": 2.0,
+			"karma_requirement": null,
+			"special_effects": ["dao_enlightenment", "all_affinities"]
+		}
+	],
+	"technique_sutras": [
+		{
+			"name": "Sutra of Thunder Palm",
+			"description": "Ancient lightning martial arts",
+			"techniques": ["Thunder Strike", "Lightning Dash"],
+			"realm_requirement": "Qi Condensation"
+		},
+		{
+			"name": "Sutra of Shadow Steps",
+			"description": "Movement arts that blend with shadows",
+			"techniques": ["Shadow Step", "Phantom Strike"],
+			"realm_requirement": "Foundation Establishment"
+		},
+		{
+			"name": "Sutra of Talisman Arts",
+			"description": "Comprehensive talisman crafting and combat",
+			"techniques": ["Fire Talisman", "Ice Talisman", "Lightning Talisman"],
+			"realm_requirement": "Qi Condensation"
+		},
+		{
+			"name": "Sutra of Veiled Hatred",
+			"description": "Demonic cultivation techniques",
+			"techniques": ["Curse Strike", "Soul Drain", "Blood Sacrifice"],
+			"realm_requirement": "Core Formation",
+			"karma_requirement": -20
+		},
+		{
+			"name": "Sutra of Heavenly Sword",
+			"description": "Supreme sword cultivation",
+			"techniques": ["Sword Qi", "Heaven Cleaving Slash", "Ten Thousand Swords"],
+			"realm_requirement": "Nascent Soul"
+		},
+		{
+			"name": "Sutra of Blood Refinement",
+			"description": "Body cultivation through blood essence",
+			"techniques": ["Blood Armor", "Crimson Burst"],
+			"realm_requirement": "Foundation Establishment"
+		},
+		{
+			"name": "Sutra of Phantom Dance",
+			"description": "Illusion and evasion techniques",
+			"techniques": ["Mirror Image", "Afterimage Dash"],
+			"realm_requirement": "Core Formation"
+		}
+	]
+}
