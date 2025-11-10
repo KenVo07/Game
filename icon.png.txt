@@ -1,0 +1,15 @@
+# Placeholder for icon.png
+# 
+# This file is a placeholder. In a real Godot project, you would have:
+# - icon.png (64x64 or 128x128 PNG image)
+# 
+# For now, you can:
+# 1. Create a simple dark purple/black icon with a moon or cultivation symbol
+# 2. Use any 64x64 PNG as a temporary icon
+# 3. Godot will use its default icon if this file is missing
+#
+# Suggested icon design:
+# - Dark background (deep purple or black)
+# - Silver/white crescent moon
+# - Stylized qi/energy swirls
+# - Minimalist cultivation symbol
