@@ -1,0 +1,296 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/ui/HUD.gd" type="Script" id=2]
+[ext_resource path="res://scripts/ui/SimulationMenu.gd" type="Script" id=3]
+[ext_resource path="res://scripts/ui/LogBook.gd" type="Script" id=4]
+
+[node name="WorldScene" type="Node2D"]
+
+[node name="Environment" type="TileMap" parent="."]
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -5000.0
+margin_top = -5000.0
+margin_right = 5000.0
+margin_bottom = 5000.0
+color = Color( 0.15, 0.1, 0.2, 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 300 )
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+custom_constants/separation = 10
+
+[node name="RealmLabel" type="Label" parent="CanvasLayer/HUD/MarginContainer/VBoxContainer"]
+margin_right = 1880.0
+margin_bottom = 14.0
+text = "Realm: Mortal"
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/HUD/MarginContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 1880.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 300, 0 )
+max_value = 100.0
+value = 100.0
+percent_visible = false
+
+[node name="QiBar" type="ProgressBar" parent="CanvasLayer/HUD/MarginContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 1880.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 300, 0 )
+max_value = 100.0
+value = 100.0
+percent_visible = false
+
+[node name="CultivationProgress" type="ProgressBar" parent="CanvasLayer/HUD/MarginContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 1880.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 300, 0 )
+max_value = 100.0
+percent_visible = false
+
+[node name="StatsPanel" type="HBoxContainer" parent="CanvasLayer/HUD/MarginContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 1880.0
+margin_bottom = 110.0
+custom_constants/separation = 30
+
+[node name="KarmaLabel" type="Label" parent="CanvasLayer/HUD/MarginContainer/VBoxContainer/StatsPanel"]
+margin_right = 60.0
+margin_bottom = 14.0
+text = "Karma: 0"
+
+[node name="ReputationLabel" type="Label" parent="CanvasLayer/HUD/MarginContainer/VBoxContainer/StatsPanel"]
+margin_left = 90.0
+margin_right = 190.0
+margin_bottom = 14.0
+text = "Reputation: 0"
+
+[node name="NotificationLabel" type="Label" parent="CanvasLayer/HUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -300.0
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 150.0
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+text = "Notification"
+align = 1
+valign = 1
+visible = false
+
+[node name="AbilityCooldownContainer" type="HBoxContainer" parent="CanvasLayer/HUD"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -100.0
+margin_right = 200.0
+margin_bottom = -50.0
+
+[node name="SimulationMenu" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/SimulationMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -400.0
+margin_right = 500.0
+margin_bottom = 400.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SimulationMenu/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 980.0
+margin_bottom = 780.0
+custom_constants/separation = 15
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer"]
+margin_right = 960.0
+margin_bottom = 14.0
+text = "=== VILLAIN SIMULATOR ==="
+align = 1
+
+[node name="AbilityRollLabel" type="Label" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer"]
+margin_top = 29.0
+margin_right = 960.0
+margin_bottom = 43.0
+text = "Rolled Ability: None"
+
+[node name="SimulationLog" type="RichTextLabel" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer"]
+margin_top = 58.0
+margin_right = 960.0
+margin_bottom = 458.0
+rect_min_size = Vector2( 0, 400 )
+scroll_following = true
+
+[node name="SuccessRatingLabel" type="Label" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer"]
+margin_top = 473.0
+margin_right = 960.0
+margin_bottom = 487.0
+text = "Success Rating: -"
+
+[node name="ButtonsPanel" type="HBoxContainer" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer"]
+margin_top = 502.0
+margin_right = 960.0
+margin_bottom = 542.0
+
+[node name="StartButton" type="Button" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer/ButtonsPanel"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+text = "Start Simulation"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer/ButtonsPanel"]
+margin_left = 154.0
+margin_right = 254.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+text = "Close"
+
+[node name="RewardChoicesPanel" type="VBoxContainer" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer"]
+margin_top = 557.0
+margin_right = 960.0
+margin_bottom = 577.0
+custom_constants/separation = 10
+
+[node name="RewardLabel" type="Label" parent="CanvasLayer/SimulationMenu/Panel/MarginContainer/VBoxContainer/RewardChoicesPanel"]
+margin_right = 960.0
+margin_bottom = 14.0
+text = "Select 2 Rewards:"
+align = 1
+
+[node name="LogBook" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer/LogBook"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -600.0
+margin_top = -450.0
+margin_right = 600.0
+margin_bottom = 450.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LogBook/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LogBook/Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1180.0
+margin_bottom = 880.0
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer"]
+margin_right = 1160.0
+margin_bottom = 14.0
+text = "=== LOG BOOK ==="
+align = 1
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 1160.0
+margin_bottom = 818.0
+rect_min_size = Vector2( 0, 800 )
+
+[node name="EventHistory" type="Tabs" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer/EventHistory"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="EventHistoryText" type="RichTextLabel" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer/EventHistory/ScrollContainer"]
+
+[node name="Insights" type="Tabs" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer/Insights"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="InsightsText" type="RichTextLabel" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer/Insights/ScrollContainer"]
+
+[node name="Quests" type="Tabs" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer/Quests"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="QuestsContainer" type="VBoxContainer" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer/TabContainer/Quests/ScrollContainer"]
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/LogBook/Panel/MarginContainer/VBoxContainer"]
+margin_top = 822.0
+margin_right = 1160.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 0, 38 )
+text = "Close"
